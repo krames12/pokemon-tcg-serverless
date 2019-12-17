@@ -1,5 +1,5 @@
 import React from "react";
-import CardItem from ".../Card"
+import CardItem from "../CardItem"
 
 const CardList = ({cards}) => (
   <ul className="card-list">
