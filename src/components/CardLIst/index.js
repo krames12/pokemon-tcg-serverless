@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 
+import {CardsConsumer} from "../CardContext";
 import CardItem from "../CardItem"
 
 const emptyCardList = () => (
@@ -12,21 +13,10 @@ const populatedCardList =  (cards) => (
   </ul>
 );
 
-const CardList = () => {
-  const [cards, setCards] = useState([]);
-
-  useEffect(() => {
-    async function getCards() {
-      const request = await fetch("/.netlify/functions/getCards");
-      const payload = await request.json();
-      return payload;
-    }
-
-    const cards = getCards();
-    cards.then(({cards}) => setCards(cards)).catch(error => console.log(error));
-  }, []);
-
-  return cards.length ? populatedCardList(cards) : emptyCardList();
-}
+const CardList = () => (
+  <CardsConsumer.Consumer>
+    { ({cards}) => cards.length ? populatedCardList(cards) : emptyCardList()}
+  </CardsConsumer.Consumer>
+)
 
 export default CardList;
