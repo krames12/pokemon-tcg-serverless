@@ -7,11 +7,23 @@ body {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  color: #61dafb;
 }
 
-.App-link {
-  color: #61dafb;
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  width: 95%;
+}
+
+.single-card {
+  max-width: 100%;
+}
+
+.card-image {
+  object-fit: contain
 }

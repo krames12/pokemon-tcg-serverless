@@ -23,7 +23,7 @@ const CardList = () => {
     }
 
     const cards = getCards();
-    cards.then(data => setCards(data)).catch(error => console.log(error));
+    cards.then(({cards}) => setCards(cards)).catch(error => console.log(error));
   }, []);
 
   return cards.length ? populatedCardList(cards) : emptyCardList();

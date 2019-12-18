@@ -1,8 +1,9 @@
 import React from "react";
 
-const CardItem = (props) => (
-  <div className="single-card">
-    <p>{props.name}</p>
+const CardItem = ({id, name, imageUrl}) => (
+  <div className="single-card" key={id}>
+    <img src={imageUrl} alt={name} className="card-image" />
+    <p>{name}</p>
   </div>
 )
 
