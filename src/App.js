@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 
 import CardList from "./components/CardList";
 
 const App = () => {
-  const [cards, setCards] = useState([]);
-
-
 
   return (
     <div className="App">
@@ -14,7 +11,7 @@ const App = () => {
         <h1>Pokemon TCG Api Example</h1>
       </header>
       <main>
-        <CardList cards={[]} />
+        <CardList />
       </main>
     </div>
   );
