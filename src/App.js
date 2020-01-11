@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import CardsProvider from ".components/CardContext";
+import CardsProvider, {CardsContext} from "./components/CardContext";
 import CardList from "./components/CardList";
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
       </header>
       <main>
         <CardsProvider>
-          <CardList />
+          <CardList context={CardsContext}/>
         </CardsProvider>
       </main>
     </div>

@@ -1,6 +1,7 @@
 import React, {createContext, useState, useEffect} from 'react';
 
-const {Consumer, Provider} = createContext('cards');
+const CardsContext = createContext('cards');
+const {Consumer, Provider} = CardsContext;
 
 const CardsProvider = () => {
   const [cards, setCards] = useState([]);
@@ -25,3 +26,4 @@ const CardsProvider = () => {
 
 export const CardsConsumer = Consumer;
 export default CardsProvider;
+export { CardsContext };

@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
 
-import {CardsConsumer} from "../CardContext";
 import CardItem from "../CardItem"
 
 const emptyCardList = () => (
@@ -13,10 +12,12 @@ const populatedCardList =  (cards) => (
   </ul>
 );
 
-const CardList = () => (
-  <CardsConsumer.Consumer>
-    { ({cards}) => cards.length ? populatedCardList(cards) : emptyCardList()}
-  </CardsConsumer.Consumer>
-)
+const CardList = (cardsContext) => {
+  const {cards} = useContext(cardsContext);
+
+  cards.length ?
+    populatedCardList(cards) :
+    emptyCardList()
+}
 
 export default CardList;
